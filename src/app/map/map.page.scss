@@ -1,0 +1,33 @@
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .iconSize {
+    font-size: 70px;
+    color: black;
+  }
+  
+  h1 {
+    text-align: left;
+  }
+  
+  .card {
+    background-color: green;
+  }
+
+  .map {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    margin: 0;
+  }

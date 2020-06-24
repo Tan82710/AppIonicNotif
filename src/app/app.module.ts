@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
 import { HttpClientModule } from '@angular/common/http';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    LocalNotifications
+    LocalNotifications,
+    Geolocation
   ],
   bootstrap: [AppComponent]
 })

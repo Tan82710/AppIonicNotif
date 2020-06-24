@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { Message } from "../message";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-home",
@@ -10,14 +11,22 @@ import { Message } from "../message";
 export class HomePage {
 
   msg : Message[] = [{message : "", id : 0, app: "", agent: 0, type: "", localisation: ""}];
-  //data = [{message : "", id : "", app: "", agent: "", type: "", localisation: ""}]
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router : Router) {
     console.log("INIT");
     this.getMsg()
   }
 
+  changeView(mode){
+    if (mode == "map"){
+      this.router.navigate(['/map'])
+    }else if(mode == "list"){
+      this.router.navigate(['/home'])
+    }
+  }
+
   getMsg(){
+    //Récupération des données d'une page à une autre
     var response = this.route.snapshot.paramMap.get('message')
     var obj = JSON.parse(response)
     this.msg = obj;

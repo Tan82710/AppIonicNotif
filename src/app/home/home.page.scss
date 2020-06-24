@@ -6,6 +6,8 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  margin-top: 25px;
+
 }
 
 #container strong {
@@ -28,4 +30,31 @@
 
 ion-content ion-toolbar {
   --background: translucent;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.iconSize {
+  font-size: 70px;
+  color: black;
+}
+
+h1 {
+  text-align: left;
+}
+
+.card {
+  background-color: green;
 }

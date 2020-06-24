@@ -30,13 +30,13 @@ export class BgsNotifPage implements OnInit {
   Notif(msg) {
     this.localNotifications.schedule({
       id: 1,
-      title: "Mission attribué",
+      title: "Mission attribuée",
       text: '',
       smallIcon: "res://assets/icon/Exyzt.png",
       icon: "file://assets/icon/Exyzt.png",
       led: "FF0000",
     });
-    //Au clic de la notif, ouvre la page de la liste des missions attribué
+    //Au clic de la notif, ouvre la page de la liste des missions attribuée
     this.localNotifications.on("click").subscribe(() => {
       console.log(msg)
       this.router.navigate(['/home', {message : msg}])
@@ -49,17 +49,9 @@ export class BgsNotifPage implements OnInit {
     this.requeteService.getUrl().subscribe((res) => {
       console.log("Req Success")
       console.log(res)
-
-      // let data = [
-      //   { message: "Un message de test TAE", app: "TAE", agent: "001", type: 'PVe', localisation: 'Rue Victor Hugo' },
-      //   { message: "Un message de test FPS", app: "FPS", agent: "002", type: 'Contrôle FPS', localisation: 'Avenue des Etats-Unis' },
-      //   { message: "Un autre message de test FPS", app: "FPS", agent: "003", type: 'Contrôle FPS', localisation: 'Rue de Metz' },
-      //   { message: "Un dernier message de test TAE", app: "TAE", agent: "004", type: 'PVe', localisation: 'Avenue de Toulouse ' },
-      //   { message: "Un dernier message de test FPS", app: "FPS", agent: "005", type: 'Contrôle FPS', localisation: 'Rue Voltaire' },
-      //   { message: "Un autre message de test TAE", app: "TAE", agent: "006", type: 'PVe', localisation: 'Avenue Beausoleil' },
-      // ];
-
+      //Convertir en JSON
       let objJson = JSON.stringify(res)
+      console.log(res)
       this.Notif(objJson)
     });
   }

@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'bgs-notif',
     loadChildren: () => import('./bgs-notif/bgs-notif.module').then( m => m.BgsNotifPageModule)
   },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
 ];
 
 @NgModule({
